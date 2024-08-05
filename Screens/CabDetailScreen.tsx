@@ -6,7 +6,7 @@ import { firestore } from '../firebaseConfig';
 interface CabDetail {
   companyName: string;
   carModel: string;
-  passengers: number;
+  passengerCapacity: number;
   rating: number;
   costPerHour: number;
   bookingStatus?: boolean; // Optional field to handle booking status
@@ -78,7 +78,7 @@ const CabDetailScreen: React.FC<{ route: any, navigation: any }> = ({ route, nav
         <View style={styles.detailsContainer}>
           <Text style={styles.title}>{cab.companyName}</Text>
           <Text style={styles.subtitle}>{cab.carModel}</Text>
-          <Text style={styles.detail}>Passengers: {cab.passengers}</Text>
+          <Text style={styles.detail}>Passengers: {cab.passengerCapacity}</Text>
           <Text style={styles.detail}>Rating: {cab.rating}</Text>
           <Text style={styles.detail}>Cost/hour: ${cab.costPerHour}</Text>
           <TouchableOpacity style={styles.bookButton} onPress={handleBookCab}>
